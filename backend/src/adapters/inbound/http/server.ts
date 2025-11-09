@@ -1,5 +1,7 @@
 import express from "express";
 import routesController from "./routesController";
+import complianceController from "./complianceController";
+import bankingController from "./bankingController";
 import cors from "cors";
 
 const app = express();
@@ -8,6 +10,8 @@ app.use(express.json());
 
 app.get("/", (_req, res) => res.send("FuelEU Maritime API running"));
 app.use("/routes", routesController);
+app.use("/compliance", complianceController);
+app.use("/banking", bankingController);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server listening on port ${PORT}`));
