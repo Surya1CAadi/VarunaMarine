@@ -4,10 +4,19 @@
   "private": true,
   "scripts": {
     "dev": "node -e \"console.log('backend dev placeholder — real server will be added in Part 5')\"",
-    "migrate": "node -e \"console.log('migrate placeholder')\"",
-    "seed": "node -e \"console.log('seed placeholder')\"",
-    "test": "node -e \"console.log('no backend tests yet')\""
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev --name init",
+    "prisma:studio": "prisma studio",
+    "prisma:seed": "ts-node prisma/seed.ts",
+    "seed": "npm run prisma:generate && npm run prisma:migrate && npm run prisma:seed",
+    "test": "node -e \"console.log('no tests yet')\""
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@prisma/client": "^6.19.0"
+  },
+  "devDependencies": {
+    "prisma": "^6.19.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
+  }
 }
