@@ -1,0 +1,13 @@
+{
+  "name": "fuel-eu-backend",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "node -e \"console.log('backend dev placeholder — real server will be added in Part 5')\"",
+    "migrate": "node -e \"console.log('migrate placeholder')\"",
+    "seed": "node -e \"console.log('seed placeholder')\"",
+    "test": "node -e \"console.log('no backend tests yet')\""
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,12 @@
+{
+  "name": "fuel-eu-frontend",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "node -e \"console.log('frontend dev placeholder — real dev server will be added in Part 8')\"",
+    "build": "node -e \"console.log('build placeholder')\"",
+    "test": "node -e \"console.log('no frontend tests yet')\""
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
