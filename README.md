@@ -162,17 +162,13 @@ curl -X POST "http://localhost:3000/banking/bank" -H "Content-Type: application/
 curl -X POST "http://localhost:3000/pools" -H "Content-Type: application/json" -d "{\"year\":2024,\"members\":[{\"shipId\":\"R002\",\"cb_before\":50000},{\"shipId\":\"R001\",\"cb_before\":-50000}]}"
 
 ## Where to look in the code
-
+``
 **Core formulas & use-cases**: backend/src/core/application/usecases/
-
 **Prisma schema & seed**: backend/prisma/
-
 **Controllers**: backend/src/adapters/inbound/http/
-
 **Repositories** (Prisma adapters): backend/src/adapters/outbound/postgres/
-
 **Frontend** pages/components: frontend/src/adapters/ui/
-
+``
 ## Notes & Caveats
 ```
 This project is intentionally minimal and focused on demonstrating architecture and correctness of computations.
