@@ -56,11 +56,9 @@ FuelEU-Maritime/
 ├── REFLECTION.md                       # Personal reflection on AI-assisted development
 └── README.md                           # Project overview, setup & instructions
 
----
+```
 
 **Key design decision:** domain logic lives in `core/` and is framework-agnostic. Adapters translate between HTTP/DB and core use-cases.
-
----
 
 ## Setup & Run (local)
 
