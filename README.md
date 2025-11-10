@@ -65,19 +65,16 @@ FuelEU-Maritime/
 ## Prerequisites:
 
 - Node.js (>= 18 recommended)
-
 - npm
 
-- Docker (optional, recommended for local Postgres)
 
-
-### 1) Start PostgreSQL (recommended using docker-compose)
+### Start PostgreSQL (recommended using docker-compose)
 
 From repo root:
 
 By default the compose file spins up Postgres on localhost:5432 with user postgres / postgres.
 
-*Backend*
+**Backend**
 ```
 cd backend
 npm install
@@ -163,19 +160,14 @@ curl -X POST "http://localhost:3000/pools" -H "Content-Type: application/json" -
 
 ## Where to look in the code
 
-**Core formulas & use-cases**: backend/src/core/application/usecases/
-
-**Prisma schema & seed**: backend/prisma/
-
-**Controllers**: backend/src/adapters/inbound/http/
-
-**Repositories** (Prisma adapters): backend/src/adapters/outbound/postgres/
-
-**Frontend** pages/components: frontend/src/adapters/ui/
+- **Core formulas & use-cases**: backend/src/core/application/usecases/
+- **Prisma schema & seed**: backend/prisma/
+- **Controllers**: backend/src/adapters/inbound/http/
+- **Repositories** (Prisma adapters): backend/src/adapters/outbound/postgres/
+- **Frontend** pages/components: frontend/src/adapters/ui/
 
 ## Notes & Caveats
-```
-This project is intentionally minimal and focused on demonstrating architecture and correctness of computations.
-Edge-case handling and production hardening (auth, rate limits, input sanitization, CI, backups) should be added for a real deployment.
-AI agents were used for scaffolding and suggestions — all outputs were reviewed and tested manually.
-```
+
+- This project is intentionally minimal and focused on demonstrating architecture and correctness of computations.
+- Edge-case handling and production hardening (auth, rate limits, input sanitization, CI, backups) should be added for a real deployment.
+- AI agents were used for scaffolding and suggestions — all outputs were reviewed and tested manually.
