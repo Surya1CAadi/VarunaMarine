@@ -45,7 +45,7 @@ export function computeCB({ ghgIntensity, fuelConsumption_t }: { ghgIntensity: n
 }
 
 
-Refinement
+**Refinement**
 
 Added optional target parameter and clearer variable names.
 
@@ -56,7 +56,7 @@ Added Jest unit tests for both positive and negative CB values.
 
 ### Example 2 — Pooling Logic (Article 21)
 
-Prompt
+**Prompt**
 
 Write a TypeScript function createPoolAllocation that accepts ships with cb_before values,
 
@@ -67,7 +67,7 @@ Each result must have cb_after and rules: no deficit ship exits worse,
 no surplus ship goes negative.
 
 
-GPT-5 Output
+**GPT-5 Output**
 
 export function createPoolAllocation(members) {
 
@@ -85,7 +85,7 @@ export function createPoolAllocation(members) {
 
 }
 
-Refinement
+**Refinement**
 
 Completed redistribution loop.
 
@@ -95,7 +95,7 @@ Integrated with Prisma to save cb_before and cb_after.
 
 
 
-Validation / Corrections
+**Validation / Corrections**
 
 
 Each GPT-5 output tested using Jest or curl API requests.
@@ -108,7 +108,7 @@ Added migrations and seed scripts for persistent data.
 
 
 
-Observations
+**Observations**
 
 
 Where GPT-5 saved time
