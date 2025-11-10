@@ -28,18 +28,27 @@ and returns { cb, energyScope }. Include validation and a Jest test.
 
 export function computeCB({ ghgIntensity, fuelConsumption_t }: { ghgIntensity: number; fuelConsumption_t: number }) {
   const TARGET = 89.3368;
+
   const MJ_PER_TON = 41000;
+  
   if (fuelConsumption_t <= 0) throw new Error("Invalid fuel consumption");
+  
   const energyScope = fuelConsumption_t * MJ_PER_TON;
+  
   const cb = (TARGET - ghgIntensity) * energyScope;
+  
   return { cb, energyScope };
+  
 }
 
 Refinement
 
 Added optional target parameter and clearer variable names.
+
 Verified manually using R001 data.
+
 Added Jest unit tests for both positive and negative CB values.
+
 
 ### Example 2 — Pooling Logic (Article 21)
 
