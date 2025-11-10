@@ -41,7 +41,7 @@ Added optional target parameter and clearer variable names.
 Verified manually using R001 data.
 Added Jest unit tests for both positive and negative CB values.
 
-Example 2 — Pooling Logic (Article 21)
+### Example 2 — Pooling Logic (Article 21)
 
 Prompt
 
