@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
     "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "ES2020"],
+    "jsx": "react-jsx",
     "module": "ESNext",
-    "lib": ["ES2020", "DOM"],
+    "moduleResolution": "Bundler",
     "strict": true,
-    "moduleResolution": "Node",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx"
+    "isolatedModules": true
   },
-  "include": ["src/**/*"]
+  "include": ["src"]
 }
