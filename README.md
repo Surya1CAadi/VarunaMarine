@@ -25,32 +25,35 @@ Functionality implemented:
 
 ## Architecture
 
-backend/
-
-src/
-
-core/ # domain models & use-cases (pure TS, no frameworks)
-
-adapters/
-
-inbound/http/ # Express controllers
-
-outbound/postgres/ # Prisma adapters
-
-prisma/ # schema + seed
-
-frontend/
-
-src/
-
-core/ # domain types
-
-adapters/
-
-infrastructure/ # API client
-
-ui/ # React components (Routes, Compare, Banking, Pooling)
-
+FuelEU-Maritime/
+├── backend/
+│   ├── src/
+│   │   ├── core/                       # Domain models & use-cases (pure TS, no frameworks)
+│   │   ├── adapters/
+│   │   │   ├── inbound/http/           # Express controllers (API endpoints)
+│   │   │   └── outbound/postgres/      # Prisma adapters (DB repositories)
+│   │   └── infrastructure/             # Server & DB setup
+│   ├── prisma/                         # Prisma schema & seed data
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── jest.config.js
+│
+├── frontend/
+│   ├── src/
+│   │   ├── core/                       # Domain types (shared entities, interfaces)
+│   │   ├── adapters/
+│   │   │   ├── infrastructure/         # API client (fetch calls to backend)
+│   │   │   └── ui/                     # React components (Routes, Compare, Banking, Pooling)
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── tailwind.config.js
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── vite.config.ts
+│
+├── AGENT_WORKFLOW.md                   # Documentation of GPT-5 usage
+├── REFLECTION.md                       # Personal reflection on AI-assisted development
+└── README.md                           # Project overview, setup & instructions
 
 
 **Key design decision:** domain logic lives in `core/` and is framework-agnostic. Adapters translate between HTTP/DB and core use-cases.
@@ -103,7 +106,7 @@ npm run dev
 # server runs at: http://localhost:3000
 
  **Frontend**
- 
+
 cd frontend
 
 npm install
