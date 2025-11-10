@@ -13,7 +13,6 @@ This document explains how GPT-5 (ChatGPT) was used while building the **FuelEU 
 |-------|----------|
 | **GPT-5 (ChatGPT)** | Used for backend and frontend design, domain modeling, code generation, refactoring, and documentation. |
 
----
 
 ## Prompts & Outputs
 
@@ -24,7 +23,7 @@ This document explains how GPT-5 (ChatGPT) was used while building the **FuelEU 
 Write a TypeScript function computeCB that takes ghgIntensity (gCO2e/MJ) and fuelConsumption_t (tonnes),
 uses target intensity 89.3368 gCO2e/MJ and energy per tonne 41000 MJ/t,
 and returns { cb, energyScope }. Include validation and a Jest test.
----
+
 **GPT-5 Output**
 
 export function computeCB({ ghgIntensity, fuelConsumption_t }: { ghgIntensity: number; fuelConsumption_t: number }) {
