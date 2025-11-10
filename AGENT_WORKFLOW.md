@@ -19,14 +19,12 @@ This document explains how GPT-5 (ChatGPT) was used while building the **FuelEU 
 
 ### Example 1 — Compute Compliance Balance (CB)
 **Prompt**
-```text
+
 Write a TypeScript function computeCB that takes ghgIntensity (gCO2e/MJ) and fuelConsumption_t (tonnes),
 uses target intensity 89.3368 gCO2e/MJ and energy per tonne 41000 MJ/t,
 and returns { cb, energyScope }. Include validation and a Jest test.
 GPT-5 Output
 
-ts
-Copy code
 export function computeCB({ ghgIntensity, fuelConsumption_t }: { ghgIntensity: number; fuelConsumption_t: number }) {
   const TARGET = 89.3368;
   const MJ_PER_TON = 41000;
@@ -46,16 +44,12 @@ Added Jest unit tests for both positive and negative CB values.
 Example 2 — Pooling Logic (Article 21)
 Prompt
 
-text
-Copy code
 Write a TypeScript function createPoolAllocation that accepts ships with cb_before values,
 ensures total sum >= 0, and redistributes surpluses to deficits.
 Each result must have cb_after and rules: no deficit ship exits worse,
 no surplus ship goes negative.
 GPT-5 Output
 
-ts
-Copy code
 export function createPoolAllocation(members) {
   const total = members.reduce((s, m) => s + m.cb_before, 0);
   if (total < 0) throw new Error("Invalid pool total CB < 0");

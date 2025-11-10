@@ -39,8 +39,6 @@ adapters/
 infrastructure/ # API client
 ui/ # React components (Routes, Compare, Banking, Pooling)
 
-yaml
-Copy code
 
 **Key design decision:** domain logic lives in `core/` and is framework-agnostic. Adapters translate between HTTP/DB and core use-cases.
 
@@ -55,13 +53,10 @@ Prerequisites:
 
 ### 1) Start PostgreSQL (recommended using docker-compose)
 From repo root:
-```bash
-docker compose up -d
+``
 By default the compose file spins up Postgres on localhost:5432 with user postgres / postgres.
 
 2) Backend
-bash
-Copy code
 cd backend
 npm install
 # generate prisma client
@@ -77,8 +72,6 @@ npm run prisma:seed
 npm run dev
 # server runs at: http://localhost:3000
 3) Frontend
-bash
-Copy code
 cd frontend
 npm install
 npm run dev
@@ -86,8 +79,6 @@ npm run dev
 How to run tests
 Backend unit tests (Jest):
 
-bash
-Copy code
 cd backend
 npm test
 This runs unit tests for computeCB, computeComparison, createPoolAllocation, and bankingRepo tests.
@@ -126,18 +117,12 @@ returns poolId and members with cb_after
 Sample requests (curl)
 Compute CB:
 
-bash
-Copy code
 curl "http://localhost:3000/compliance/cb?shipId=R001&year=2024"
 Bank an amount:
 
-bash
-Copy code
 curl -X POST "http://localhost:3000/banking/bank" -H "Content-Type: application/json" -d "{\"shipId\":\"R001\",\"year\":2024,\"amount\":1000000}"
 Create a pool:
 
-bash
-Copy code
 curl -X POST "http://localhost:3000/pools" -H "Content-Type: application/json" -d "{\"year\":2024,\"members\":[{\"shipId\":\"R002\",\"cb_before\":50000},{\"shipId\":\"R001\",\"cb_before\":-50000}]}"
 Where to look in the code
 Core formulas & use-cases: backend/src/core/application/usecases/
