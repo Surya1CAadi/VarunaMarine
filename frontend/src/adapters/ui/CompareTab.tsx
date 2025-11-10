@@ -68,7 +68,7 @@ export default function CompareTab() {
             Baseline: <strong>{baseline}</strong>
           </p>
           <div className="overflow-x-auto">
-            <table className="min-w-full border-collapse border">
+            <table className="min-w-full border-collapse border text-center">
               <thead>
                 <tr className="border-b">
                   <th className="p-2">Route</th>

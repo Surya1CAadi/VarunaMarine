@@ -143,7 +143,7 @@ export default function PoolingTab() {
       {result && (
         <div className="mt-6">
           <h3 className="text-lg font-semibold mb-2">Pool Created — ID: {result.poolId}</h3>
-          <table className="min-w-full border">
+          <table className="min-w-full border text-center">
             <thead><tr className="border-b"><th className="p-2">Ship</th><th className="p-2">CB Before</th><th className="p-2">CB After</th></tr></thead>
             <tbody>
               {result.members.map((m) => (

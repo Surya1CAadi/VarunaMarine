@@ -93,30 +93,36 @@ export default function BankingTab() {
       </div>
 
       <h3 className="text-lg font-semibold mb-2">Bank Entries</h3>
-      <table className="min-w-full border">
+      <table className="min-w-full border text-center">
         <thead>
-          <tr className="border-b">
+          <tr className="border-b bg-gray-100">
             <th className="p-2">ID</th>
             <th className="p-2">Amount</th>
             <th className="p-2">Created At</th>
           </tr>
         </thead>
         <tbody>
-          {records.map((r: any) => (
-            <tr key={r.id} className="border-b">
-              <td className="p-2">{r.id}</td>
-              <td
-                className={`p-2 ${
-                  r.amount_gco2eq > 0 ? "text-green-600" : "text-red-600"
-                }`}
-              >
-                {r.amount_gco2eq}
-              </td>
-              <td className="p-2">
-                {new Date(r.createdAt).toLocaleString()}
-              </td>
-            </tr>
-          ))}
+          {/* Sort by createdAt descending before mapping */}
+          {[...records]
+            .sort(
+              (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+            )
+            .map((r: any) => (
+              <tr key={r.id} className="border-b hover:bg-gray-50">
+                <td className="p-2">{r.id}</td>
+                <td
+                  className={`p-2 font-semibold ${r.amount_gco2eq > 0
+                      ? "text-green-600"
+                      : "text-red-600"
+                    }`}
+                >
+                  {r.amount_gco2eq}
+                </td>
+                <td className="p-2 ">
+                  {new Date(r.createdAt).toLocaleString()}
+                </td>
+              </tr>
+            ))}
           {records.length === 0 && (
             <tr>
               <td colSpan={3} className="p-4 text-center">
@@ -126,6 +132,7 @@ export default function BankingTab() {
           )}
         </tbody>
       </table>
+
     </div>
   );
 }
