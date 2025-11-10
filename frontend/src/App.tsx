@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import RoutesTab from "./adapters/ui/RoutesTab";
+import BankingTab from "./adapters/ui/BankingTab";
+import CompareTab from "./adapters/ui/CompareTab";
 
 export default function App() {
   const [tab, setTab] = useState<"routes" | "compare" | "banking" | "pooling">("routes");
@@ -20,8 +22,9 @@ export default function App() {
 
       <main className="container mx-auto px-4 py-6">
         {tab === "routes" && <RoutesTab />}
-        {tab === "compare" && <div className="p-4">Compare tab (to be implemented in Part 9)</div>}
-        {tab === "banking" && <div className="p-4">Banking tab (to be implemented in Part 9)</div>}
+        {tab === "compare" && <CompareTab />}
+        {tab === "banking" && <BankingTab />}
+
         {tab === "pooling" && <div className="p-4">Pooling tab (to be implemented in Part 10)</div>}
       </main>
     </div>

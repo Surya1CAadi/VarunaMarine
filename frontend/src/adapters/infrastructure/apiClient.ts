@@ -18,4 +18,36 @@ export async function setBaseline(routeId: string) {
   return res.data;
 }
 
+
+export async function fetchComparison(year: number) {
+  const res = await api.get("/routes/comparison", { params: { year } });
+  return res.data;
+}
+
+export async function getComplianceCB(shipId: string, year: number) {
+  const res = await api.get("/compliance/cb", { params: { shipId, year } });
+  return res.data;
+}
+
+export async function getAdjustedCB(shipId: string, year: number) {
+  const res = await api.get("/compliance/adjusted-cb", { params: { shipId, year } });
+  return res.data;
+}
+
+export async function bankAmount(shipId: string, year: number, amount: number) {
+  const res = await api.post("/banking/bank", { shipId, year, amount });
+  return res.data;
+}
+
+export async function applyAmount(shipId: string, year: number, amount: number) {
+  const res = await api.post("/banking/apply", { shipId, year, amount });
+  return res.data;
+}
+
+export async function getBankRecords(shipId: string, year: number) {
+  const res = await api.get("/banking/records", { params: { shipId, year } });
+  return res.data;
+}
+
+
 export default api;
