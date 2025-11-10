@@ -49,5 +49,10 @@ export async function getBankRecords(shipId: string, year: number) {
   return res.data;
 }
 
+export async function createPool(year: number, members: { shipId: string; cb_before: number }[]) {
+  const res = await api.post("/pools", { year, members });
+  return res.data;
+}
+
 
 export default api;

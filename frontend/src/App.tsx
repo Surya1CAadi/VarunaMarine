@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import RoutesTab from "./adapters/ui/RoutesTab";
 import BankingTab from "./adapters/ui/BankingTab";
 import CompareTab from "./adapters/ui/CompareTab";
+import PoolingTab from "./adapters/ui/PoolingTab";
 
 export default function App() {
   const [tab, setTab] = useState<"routes" | "compare" | "banking" | "pooling">("routes");
@@ -24,8 +25,7 @@ export default function App() {
         {tab === "routes" && <RoutesTab />}
         {tab === "compare" && <CompareTab />}
         {tab === "banking" && <BankingTab />}
-
-        {tab === "pooling" && <div className="p-4">Pooling tab (to be implemented in Part 10)</div>}
+        {tab === "pooling" && <PoolingTab />}
       </main>
     </div>
   );
