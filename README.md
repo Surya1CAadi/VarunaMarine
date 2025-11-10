@@ -25,7 +25,7 @@ Functionality implemented:
 
 ## Architecture
 
-
+``` 
 FuelEU-Maritime/
 ├── backend/
 │   ├── src/
